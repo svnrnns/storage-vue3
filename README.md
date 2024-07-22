@@ -40,7 +40,7 @@ Storage Vue 3 is a package designed to enhance the local storage experience in V
 ## Installation
 
 ```bash
-$ npm install storage-vue3 --save-dev
+$ npm install storage-vue3
 ```
 
 ## Usage
