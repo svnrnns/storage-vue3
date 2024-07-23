@@ -99,7 +99,7 @@ For data storage, use the `setRef()` function.
 
 ```js
 const reactiveVariable = ref('something');
-set('token', reactiveVariable);
+setRef('token', reactiveVariable);
 ```
 
 By binding `reactiveVariable` to the key **token** in local storage, any changes to the variable will automatically reflect in the corresponding local storage value, ensuring seamless synchronization between Vue components and local storage.
