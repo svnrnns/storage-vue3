@@ -1,5 +1,5 @@
 import { ref as i, watch as u } from "vue";
-class n extends Error {
+class s extends Error {
   constructor(e) {
     super(e), this.name = "LocalStorageError";
   }
@@ -25,7 +25,7 @@ const c = function(e, r) {
 function f(t) {
   const e = localStorage.getItem(t);
   if (e === null)
-    throw new n(
+    throw new s(
       `The key ${t} does not exist in the current local storage`
     );
   const r = i(a(e));
@@ -36,11 +36,11 @@ function f(t) {
 }
 function m(t, e) {
   if (!t)
-    throw new n("Key value not provided");
+    throw new s("Key value not provided");
   if (!e)
-    throw new n("Set value cannot be null");
+    throw new s("Set value cannot be null");
   if (typeof e != "object")
-    throw new n(
+    throw new s(
       "Variable must be a Vue reactive object (ref/computed)"
     );
   c(t, e.value), u(e, () => c(t, e.value), {
@@ -50,14 +50,14 @@ function m(t, e) {
 function h(t) {
   const e = localStorage.getItem(t);
   if (e === null)
-    throw new StorageError(
+    throw new s(
       `The key ${t} does not exists in the current local storage`
     );
   return a(e);
 }
 function S(t, e) {
   if (!t)
-    throw new n("Key value not provided");
+    throw new s("Key value not provided");
   const r = l(e) ? JSON.stringify(e) : e;
   localStorage.setItem(t, r);
 }
@@ -85,9 +85,9 @@ class N {
   }
   setNamespace(e) {
     if (!e)
-      throw new n("Namespace variable not provided");
+      throw new s("Namespace variable not provided");
     if (typeof e != "string")
-      throw new n("Namespace variable must be of type string");
+      throw new s("Namespace variable must be of type string");
     this.namespace = e;
   }
   getRef(e) {
@@ -121,7 +121,7 @@ class N {
     return w();
   }
 }
-const s = new N(), I = (t) => s.getRef(t), K = (t, e) => s.setRef(t, e), R = (t) => s.get(t), x = (t, e) => s.set(t, e), _ = (t) => s.exists(t), b = (t) => s.remove(t), J = () => s.clear(), L = () => s.length();
+const n = new N(), I = (t) => n.getRef(t), K = (t, e) => n.setRef(t, e), R = (t) => n.get(t), x = (t, e) => n.set(t, e), _ = (t) => n.exists(t), b = (t) => n.remove(t), J = () => n.clear(), L = () => n.length();
 export {
   J as clear,
   N as default,

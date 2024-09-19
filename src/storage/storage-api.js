@@ -11,7 +11,7 @@ export function useGetStorage(key) {
   const item = localStorage.getItem(key);
 
   if (item === null)
-    throw new StorageError(
+    throw new LocalStorageError(
       `The key ${key} does not exists in the current local storage`
     );
 
